@@ -1,0 +1,86 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: f5b1c52e1af97804d783a6c4d37b542bc8f965a936b2a426b81f942402247e78
+
+name:           myweb
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/myweb#readme>
+homepage:       https://github.com/githubuser/myweb#readme
+bug-reports:    https://github.com/githubuser/myweb/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/myweb
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_myweb
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , http-media
+    , http-types
+    , postgresql-simple
+    , servant-server
+    , wai
+    , wai-cors
+    , warp
+  default-language: Haskell2010
+
+executable myweb-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_myweb
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , http-media
+    , http-types
+    , myweb
+    , postgresql-simple
+    , servant-server
+    , wai
+    , wai-cors
+    , warp
+  default-language: Haskell2010
+
+test-suite myweb-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_myweb
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , bytestring
+    , http-media
+    , http-types
+    , myweb
+    , postgresql-simple
+    , servant-server
+    , wai
+    , wai-cors
+    , warp
+  default-language: Haskell2010
