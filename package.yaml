@@ -29,6 +29,10 @@ dependencies:
 - http-types
 - http-media
 - bytestring
+- blaze-html
+- markdown
+- text
+- utf8-string
 
 library:
   source-dirs: src

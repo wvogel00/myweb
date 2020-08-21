@@ -7,6 +7,11 @@ MacOS Catalina 10.15.6
 - サイトページの表示
 - ログイン機能で，ブラウザ上でのコンテンツ編集
 
+
+### curl
+- GET ... curl -X GET localhost:8080/login?user=test\&pass=secret
+- POST ... curl -X POST localhost:8080/login?user=test\&pass=secret
+
 ### postgresql (備忘録)
 #### インストール
 ```
