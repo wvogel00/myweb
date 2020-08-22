@@ -33,18 +33,27 @@ data FileType = MdFile | HTMLFile | CSSFile | JSFile | IMGFile deriving Eq
 
 type API = Get '[HTML] BS.ByteString
     :<|> "blog" :> Get '[HTML] BS.ByteString
+    :<|> "devs" :> Get '[HTML] BS.ByteString
+    :<|> "pubs" :> Get '[HTML] BS.ByteString
+    :<|> "contact" :> Get '[HTML] BS.ByteString
     :<|> "html" :> Raw
     :<|> "css" :> Raw
     :<|> "js" :> Raw
     :<|> "img" :> Raw
 
-top, blog :: FilePath
+top, blog, devs, pubs, contact :: FilePath
 top = "html/index.html"
 blog = "html/blog.html"
+devs = "html/devs.html"
+pubs = "html/pubs.html"
+contact = "html/contact.html"
 
 webServer :: Server API
 webServer = getHtml top
         :<|> getHtml blog
+        :<|> getHtml devs
+        :<|> getHtml pubs
+        :<|> getHtml contact
         :<|> getStatics HTMLFile
         :<|> getStatics CSSFile
         :<|> getStatics JSFile
